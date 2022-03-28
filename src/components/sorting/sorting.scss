@@ -11,6 +11,10 @@
   &__button {
     &:not(:last-child) {
       margin-bottom: 10px;
+
+      @media (max-width: 600px) {
+        margin-right: 10px;
+      }
     }
   }
 }
