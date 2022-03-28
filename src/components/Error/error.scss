@@ -1,0 +1,23 @@
+.error {
+  font-size: 24px;
+  font-weight: 700;
+  color: red;
+  animation-name: error;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes error {
+  0% {
+    color: red;
+    opacity: 100%;
+  }
+  50% {
+    color: black;
+    opacity: 0;
+  }
+  100%{
+    color: red;
+    opacity: 100%;
+  }
+}

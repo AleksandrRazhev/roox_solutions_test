@@ -1,0 +1,40 @@
+@import '../../style/variables.scss';
+
+.user {
+
+  &__title-block {
+    display: flex;
+    margin-bottom: 11px;
+  }
+
+  &__title {
+    flex-grow: 1;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+
+  &__edit {}
+
+  &__submit {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+
+  .form {
+    margin-bottom: 10px;
+    padding: 20px 6px 19px 12px;
+    border-radius: 8px;
+    border: 1px solid $color-gray3;
+  }
+
+  .textarea {
+    width: 100%;
+    height: 55px;
+
+    &_active {
+      color: $color-black;
+    }
+  }
+}
