@@ -31,20 +31,17 @@ const User = (props) => {
     obj[name] = value;
   }
 
-  const submitClassName = () => edit ? 'user__submit button button_open' : 'user__submit button button_close';
-  const readOnlyInput = () => edit ? false : true;
-
   const inputs = arrInputs.map((item) => {
-    return <ItemInput key={item[0]} data={item} readOnlyInput={readOnlyInput()} getValue={getValue} />
+    return <ItemInput key={item[0]} data={item} readOnlyInput={edit ? false : true} getValue={getValue} />
   });
-
-  const editBtnClassName = edit ? 'user__edit button button_active' : 'user__edit button';
 
   return (
     <div className='user'>
       <div className='user__title-block'>
         <h2 className='user__title'>Профиль пользователя</h2>
-        <button className={editBtnClassName} onClick={() => setEdit(true)}>Редактировать</button>
+        <button className={`user__edit button ${edit ? 'button_active' : null}`}
+          onClick={() => setEdit(true)}
+        >Редактировать</button>
       </div>
       <form className='user__form form'>
 
@@ -52,12 +49,14 @@ const User = (props) => {
 
         <label className='form__label'>
           <p>Comment</p>
-          <textarea className={edit ? 'form__input textarea textarea_active' : 'form__input textarea'} name="comment"
-            onChange={(e) => getValue(e.target.name, e.target.value)} readOnly={readOnlyInput()}
+          <textarea className={`form__input textarea ${edit ? 'textarea_active' : null}`} name="comment"
+            onChange={(e) => getValue(e.target.name, e.target.value)} readOnly={edit ? false : true}
           ></textarea>
         </label>
       </form>
-      <button onClick={submit} className={submitClassName()}>Отправить</button>
+      <button onClick={submit}
+        className={`user__submit button ${edit ? 'button_open' : 'button_close'}`}
+      >Отправить</button>
       <button className='user__back button' onClick={() => props.showUser(null)}>Назад к списку пользователей</button>
     </div>
   )
