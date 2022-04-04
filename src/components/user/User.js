@@ -39,7 +39,7 @@ const User = (props) => {
     <div className='user'>
       <div className='user__title-block'>
         <h2 className='user__title'>Профиль пользователя</h2>
-        <button className={`user__edit button ${edit ? 'button_active' : null}`}
+        <button className={`user__edit button ${edit ? 'button_active' : ''}`}
           onClick={() => setEdit(true)}
         >Редактировать</button>
       </div>

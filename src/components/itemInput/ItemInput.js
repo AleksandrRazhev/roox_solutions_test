@@ -11,7 +11,7 @@ const ItemInput = (props) => {
     getValue(e.target.name, e.target.value);
   }
 
-  const field = text ? null : 'form__input_not-filled';
+  const field = text ? '' : 'form__input_not-filled';
 
   return (
     <label className='form__label'>
